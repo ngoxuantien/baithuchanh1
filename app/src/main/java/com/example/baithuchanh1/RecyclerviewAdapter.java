@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -32,6 +33,7 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
         holder.ngaysinh.setText(list.get(position).getDateofbirth());
         holder.id.setText(list.get(position).getId()+"");
         holder.name.setText(list.get(position).getName());
+        holder.imageView.setImageResource(list.get(position).getImage());
         holder.xoa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,9 +52,10 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView id, name, ngaysinh;
         Button xoa;
-
+ImageView imageView ;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            imageView = itemView.findViewById(R.id.imagedf);
             id = itemView.findViewById(R.id.iduser);
             name = itemView.findViewById(R.id.nametv);
             ngaysinh = itemView.findViewById(R.id.ngaysinh);

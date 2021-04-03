@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">baithuchanh1</string>
+    <string-array name="dsfaf">
+        <item name="hoa" >@drawable/ic_launcher_background </item>
+        <item name="hoa" >@drawable/ic_launcher_background </item>
+        <item name="hoa" >@drawable/ic_launcher_background </item>
+        <item name="hoa" >@drawable/ic_launcher_background </item>
+        <item name="hoa" >@drawable/ic_launcher_background </item>
+        <item name="hoa" >@drawable/ic_launcher_background </item>
+    </string-array>
 </resources>
