@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         list = new ArrayList<>();
         list.add(new User(1, R.drawable.ic_launcher_background, "trang nguyen","hoa"));
         setUpdate();
-String [] stringArray=getResources().getStringArray(R.array.dsfaf);
+   // String [] stringArray=getResources().getStringArray(R.array.dsfaf);
+    String [] stringArray = getResources().getStringArray(R.array.dsfaf);
         setAdapterrecy();
        spin = (Spinner) findViewById(R.id.spiner);
         //Gán Data source (arr) vào Adapter
@@ -38,8 +40,11 @@ String [] stringArray=getResources().getStringArray(R.array.dsfaf);
                         this,
                         android.R.layout.simple_spinner_item,stringArray
                         );
+
+
   //      Glide.with(context).load(categoryItems.get(position).getImageUrl()).into(holder.itemImage);
         //phải gọi lệnh này để hiển thị danh sách cho Spinner
+ 
         adapter.setDropDownViewResource
                 (android.R.layout.simple_list_item_single_choice);
         //Thiết lập adapter cho Spinner
@@ -71,13 +76,21 @@ String [] stringArray=getResources().getStringArray(R.array.dsfaf);
                 namemm = findViewById(R.id.namenn);
                 ngay = findViewById(R.id.ngay);
                 User user1= new User(Integer.parseInt(iddd.getText().toString()), namemm.getText().toString(), ngay.getText().toString());
-                spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-                user1.setImage((Integer) parent.getItemAtPosition(pos));
-                    }
-                    public void onNothingSelected(AdapterView<?> parent) {
-                    }
-                });
+
+
+//                spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//                    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+//
+//
+//                    }
+//                    public void onNothingSelected(AdapterView<?> parent) {
+//
+//                    }
+//                });
+
+                if (spin.getSelectedItem().equals("hoang")){
+                    user1.setImage(R.drawable.imageapp);
+                }
                 list.add(user1);
                 recyclerviewAdapter.notifyDataSetChanged();
 
